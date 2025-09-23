@@ -1,0 +1,13 @@
+<!-- Make an image map showing the usage of shape, coords, href attributes in map definition. Link each hotspot to their respective details. All the web pages should be designed with proper background color, images, font styles and headings -->
+<!DOCTYPE html>
+<html>
+    <body style="background-color:blue; color:white; font-family:Arial, sans-serif;">
+        <h1>Image Map Example</h1>
+        <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Chania" usemap="#image-map" width="600" height="400" style="border:2px solid black;">
+
+        <map name="image-map">
+            <area shape="rect" coords="34,44,270,350" alt="Chania" href="https://en.wikipedia.org/wiki/Chania" style="outline:none;">
+            <area shape="circle" coords="337,300,44" alt="Skiathos" href="https://en.wikipedia.org/wiki/Skiathos" style="outline:none;">
+            <area shape="poly" coords="500,150,550,200,520,250,480,200" alt="Santorini" href="https://en.wikipedia.org/wiki/Santorini" style="outline:none;">
+        </map>
+    </body>
