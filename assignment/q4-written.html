@@ -1,0 +1,108 @@
+<!-- Create an HTML website for Pizza ordering with customer information and validate some
+controls using javascript. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Ordering</title>
+        <style>
+            body {
+                background-color: #f8f8f8;
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+            h1 {
+                text-align: center;
+            }
+            form {
+                max-width: 500px;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #fff;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+        <script>
+            function validateForm() {
+                var name = document.forms["pizzaForm"]["name"].value;
+                var email = document.forms["pizzaForm"]["email"].value;
+                var phone = document.forms["pizzaForm"]["phone"].value;
+
+                if (name == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+                var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (!email.match(emailPattern)) {
+                    alert("Please enter a valid email address");
+                    return false;
+                }
+                var phonePattern = /^\d{10}$/;
+                if (!phone.match(phonePattern)) {
+                    alert("Please enter a valid 10-digit phone number");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Pizza Ordering Form</h1>
+        <form name="pizzaForm" onsubmit="return validateForm()" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email
+" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="pizzaSize">Pizza Size:</label>
+            <select id="pizzaSize" name="pizzaSize" required>
+                <option value="">Select Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <label for="toppings">Toppings:</label>
+            <select id="toppings" name="toppings" multiple>
+                <option value="pepperoni">Pepperoni</option>
+                <option value="mushrooms">Mushrooms</option>
+                <option value="onions">Onions</option>
+                <option value="sausage">Sausage</option>
+                <option value="bacon">Bacon</option>
+                <option value="extraCheese">Extra Cheese</option>
+                <option value="blackOlives">Black Olives</option>
+                <option value="greenPeppers">Green Peppers</option>
+                <option value="pineapple">Pineapple</option>
+                <option value="spinach">Spinach</option>
+            </select>
+
+            <button type="submit">Order Pizza</button>
+        </form>
+    </body>
+</html>
