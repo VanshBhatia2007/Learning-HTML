@@ -1,0 +1,66 @@
+<!-- Write a program to show the usage of all the date, math and string object functions -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date, Math, and String Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Date, Math, and String Functions Example</h2>
+    <div class="output" id="output"></div>
+
+    <script>
+        // Date Object Functions
+        const date = new Date();
+        const dateString = `Current Date and Time: ${date.toString()}`;
+        const year = `Current Year: ${date.getFullYear()}`;
+        const month = `Current Month: ${date.getMonth() + 1}`; // Months are zero-based
+        const day = `Current Day: ${date.getDate()}`;
+
+        // Math Object Functions
+        const randomNum = `Random Number (0-100): ${Math.floor(Math.random() * 101)}`;
+        const piValue = `Value of Pi: ${Math.PI}`;
+        const sqrtValue = `Square Root of 16: ${Math.sqrt(16)}`;
+        const powerValue = `2 raised to the power 3: ${Math.pow(2, 3)}`;
+
+        // String Object Functions
+        const sampleString = "Hello, World!";
+        const stringLength = `Length of "${sampleString}": ${sampleString.length}`;
+        const upperCaseString = `Uppercase: ${sampleString.toUpperCase()}`;
+        const lowerCaseString = `Lowercase: ${sampleString.toLowerCase()}`;
+        const substring = `Substring (0-5): ${sampleString.substring(0, 5)}`;
+
+        // Displaying all results
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = `
+            <p>${dateString}</p>
+            <p>${year}</p>
+            <p>${month}</p>
+            <p>${day}</p>
+            <hr>
+            <p>${randomNum}</p>
+            <p>${piValue}</p>
+            <p>${sqrtValue}</p>
+            <p>${powerValue}</p>
+            <hr>
+            <p>${stringLength}</p>
+            <p>${upperCaseString}</p>
+            <p>${lowerCaseString}</p>
+            <p>${substring}</p>
+        `;
+    </script>
+</body>
+</html>

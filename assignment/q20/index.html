@@ -1,0 +1,39 @@
+<!-- Write a program to implement event handling using onclick, onmouseover and onmouseout events. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Example</title>
+    <style>
+        #hoverBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 20px;
+            border: 2px solid blue;
+        }
+        #clickButton {
+            padding: 10px 20px;
+            background-color: lightgreen;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickButton" onclick="alert('Button clicked!')">Click Me</button>
+    <div id="hoverBox" onmouseover="this.style.backgroundColor='yellow';" onmouseout="this.style.backgroundColor='lightblue';">
+        Hover over me!
+    </div>
+</body>
+</html>
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
