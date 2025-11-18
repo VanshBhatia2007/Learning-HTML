@@ -1,0 +1,56 @@
+<!-- Create a webpage containing various types of buttons -->
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Button Types Example</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .button-container {
+                margin-bottom: 15px;
+            }
+            button, .btn {
+                margin-right: 10px;
+                padding: 10px 15px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .btn-primary {
+                background-color: #007bff;
+                color: white;
+                border: none;
+            }
+            .btn-secondary {
+                background-color: #6c757d;
+                color: white;
+                border: none;
+            }
+            .btn-success {
+                background-color: #28a745;
+                color: white;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Various Types of Buttons</h1>
+
+        <div class="button-container">
+            <h2>Standard HTML Buttons</h2>
+            <button type="button">Default Button</button>
+            <button type="button" disabled>Disabled Button</button>
+        </div>
+
+        <div class="button-container">
+            <h2>Styled Buttons</h2>
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-secondary">Secondary Button</button>
+            <button class="btn btn-success">Success Button</button>
+        </div>
+    </body>
+</html>

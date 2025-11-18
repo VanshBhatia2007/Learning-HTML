@@ -1,0 +1,39 @@
+<!-- Write a JavaScript function that creates a table, accept row, column numbers from the user, and input row-column number as content (e.g. Row-0 Column-0) of a cell. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Creation</title>
+    <script>
+        function createTable() {
+            // Get the number of rows and columns from the user
+            let rows = parseInt(prompt("Enter the number of rows:"));
+            let cols = parseInt(prompt("Enter the number of columns:"));
+
+            // Create a table element
+            let table = document.createElement("table");
+            table.border = "1";
+
+            // Loop to create rows and columns
+            for (let i = 0; i < rows; i++) {
+                let tr = document.createElement("tr");
+                for (let j = 0; j < cols; j++) {
+                    let td = document.createElement("td");
+                    td.innerText = `Row-${i} Column-${j}`;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+
+            // Append the table to the body or a specific div
+            document.getElementById("tableContainer").innerHTML = ""; // Clear previous table
+            document.getElementById("tableContainer").appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <div id="tableContainer"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Create a webpage and show the usage of inline and
+internal style sheet and external style sheet? -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Style Sheet Example</title>
+        <style>
+            /* Internal Style Sheet */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            p {
+                font-size: 16px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <h1 style="color: blue;">Welcome to the Style Sheet Example</h1> <!-- Inline Style -->
+        <p>This paragraph is styled using an internal style sheet.</p>
+        <p class="external-style">This paragraph is styled using an external style sheet.</p>
+        
+    </body>
+</html>

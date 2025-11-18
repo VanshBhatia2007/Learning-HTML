@@ -1,0 +1,30 @@
+<!-- Write a program to show the usage of alert box and confirm box -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alert Box and Confirm Box Example</title>
+        <script>
+            // Function to show an alert box
+            function showAlertBox() {
+                alert("This is an alert box!");
+            }
+
+            // Function to show a confirm box
+            function showConfirmBox() {
+                let userResponse = confirm("Do you want to proceed?");
+                if (userResponse) {
+                    alert("You chose to proceed.");
+                } else {
+                    alert("You chose to cancel.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h2 class="mb-4">Alert Box and Confirm Box Example</h2>
+            <button onclick="showAlertBox()">Show Alert Box</button>
+            <button onclick="showConfirmBox()">Show Confirm Box</button>
+        </div>
+    </body>
+</html>

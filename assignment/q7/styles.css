@@ -1,0 +1,11 @@
+/* this is a externl css style sheet for index.html */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.external-style {
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<!-- Write a program to show the usage of inbuilt functions and dialog boxes. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inbuilt Functions and Dialog Boxes Example</title>
+        <script>
+            // Function to demonstrate inbuilt functions
+            function showInbuiltFunctions() {
+                let number = 5.67;
+                let roundedNumber = Math.round(number);
+                let upperCaseString = "hello world".toUpperCase();
+                alert("Rounded Number: " + roundedNumber + "\nUppercase String: " + upperCaseString);
+            }
+
+            // Function to demonstrate dialog boxes
+            function showDialogBoxes() {
+                let userName = prompt("Please enter your name:");
+                if (userName) {
+                    let confirmation = confirm("Is your name " + userName + "?");
+                    if (confirmation) {
+                        alert("Welcome, " + userName + "!");
+                    } else {
+                        alert("Please try again.");
+                    }
+                } else {
+                    alert("No name entered.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h2 class="mb-4">Inbuilt Functions and Dialog Boxes Example</h2>
+            <button onclick="showInbuiltFunctions()">Show Inbuilt Functions</button>
+            <button onclick="showDialogBoxes()">Show Dialog Boxes</button>
+        </div>
+    </body>
+</html>
