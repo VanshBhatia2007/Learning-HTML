@@ -1,0 +1,15 @@
+.book{
+    background-color: blue;
+    transition: 1s;
+    transition-delay: 0.5s;
+    transition-timing-function: linear
+}
+.book:hover{
+    background-color: red;
+    border-radius: 10px;
+    /* margin-right: 400px; */
+    /* transform: rotate(360deg); */
+    /* transform: scale(0.5); */
+    /* transform: translateY(500px); */
+    transform: skew(520deg);
+}
