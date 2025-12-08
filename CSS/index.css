@@ -1,4 +1,4 @@
-.book{
+/* .book{
     background-color: blue;
     transition: 1s;
     transition-delay: 0.5s;
@@ -11,5 +11,19 @@
     /* transform: rotate(360deg); */
     /* transform: scale(0.5); */
     /* transform: translateY(500px); */
-    transform: skew(520deg);
+    /* transform: skew(520deg); */
+/* } */ 
+.book{
+    background-color: red;
+    margin-right: 200px;
+    margin-left: 200px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 11);
 }
+.book:hover{
+    box-shadow: 5px 5px 20px rgb(10, 10, 80);
+    transition: 1s;
+}
+/* body{
+    background-image: url(avengers.jpeg);
+    background-size: cover;
+} */
