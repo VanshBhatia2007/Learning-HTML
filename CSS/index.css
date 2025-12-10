@@ -13,15 +13,22 @@
     /* transform: translateY(500px); */
     /* transform: skew(520deg); */
 /* } */ 
+.outer{
+    height: 300px;
+    width: 1000px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
 .book{
+    height: 150px;
+    width: 400px;
     background-color: red;
-    margin-right: 200px;
-    margin-left: 200px;
+    /* margin-right: 200px;
+    margin-left: 200px; */
     box-shadow: 5px 5px 10px rgb(0, 0, 11);
     border-radius: 10px;
-    position: relative;
-    top: 100px; 
-    right: 100px;
 }
 .book:hover{
     box-shadow: 5px 5px 20px rgb(10, 10, 80);
