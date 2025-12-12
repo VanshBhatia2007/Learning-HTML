@@ -14,12 +14,13 @@
     /* transform: skew(520deg); */
 /* } */ 
 .outer{
-    height: 300px;
+    height: 200px;
     width: 1000px;
     border-color: black;
     border-style: solid;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .book{
     height: 150px;
@@ -32,7 +33,7 @@
 }
 .book:hover{
     box-shadow: 5px 5px 20px rgb(10, 10, 80);
-    transition: 1s;
+    transition: 2s;
 }
 /* body{
     background-image: url(avengers.jpeg);
