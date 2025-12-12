@@ -14,17 +14,21 @@
     /* transform: skew(520deg); */
 /* } */ 
 .outer{
-    height: 200px;
+    height: 400px;
     width: 1000px;
     border-color: black;
     border-style: solid;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 10px 20px;
+    /* grid-template-rows: repeat(5,1fr); */
+    grid-template-rows: 100px 100px;
+    grid-template-columns: auto auto;
+    /* flex-direction: column;
+    flex-wrap: wrap; */
 }
 .book{
     height: 150px;
-    width: 400px;
+    width: 150px;
     background-color: red;
     /* margin-right: 200px;
     margin-left: 200px; */
