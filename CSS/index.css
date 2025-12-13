@@ -18,11 +18,11 @@
     width: 1000px;
     border-color: black;
     border-style: solid;
-    display: grid;
-    grid-gap: 10px 20px;
+    /* display: grid;
+    grid-gap: 10px 20px; */
     /* grid-template-rows: repeat(5,1fr); */
-    grid-template-rows: 100px 100px;
-    grid-template-columns: auto auto;
+    /* grid-template-rows: 100px 100px;
+    grid-template-columns: auto auto; */
     /* flex-direction: column;
     flex-wrap: wrap; */
 }
@@ -34,11 +34,23 @@
     margin-left: 200px; */
     box-shadow: 5px 5px 10px rgb(0, 0, 11);
     border-radius: 10px;
+    /* animation-name: cardanimation;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-direction: alternate-reverse; */
+    /* animation-iteration-count: 2; */
 }
-.book:hover{
+/* @keyframes cardanimation {
+    0%{ width: 200px;}
+    100% {
+        width: 400px;
+    }
+} */
+
+/* .book:hover{
     box-shadow: 5px 5px 20px rgb(10, 10, 80);
     transition: 2s;
-}
+} */
 /* body{
     background-image: url(avengers.jpeg);
     background-size: cover;
