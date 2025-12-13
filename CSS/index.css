@@ -40,6 +40,14 @@
     animation-direction: alternate-reverse; */
     /* animation-iteration-count: 2; */
 }
+@media(min-width:400px){
+    div{
+        background-color: yellow;
+    }
+    h2{
+        background-color: bisque;
+    }
+}
 /* @keyframes cardanimation {
     0%{ width: 200px;}
     100% {
