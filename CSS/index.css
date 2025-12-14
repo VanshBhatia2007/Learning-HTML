@@ -48,6 +48,11 @@
         background-color: bisque;
     }
 }
+@media(orientation: landscape){
+    h2{
+        text-decoration: underline;
+    }
+}
 /* @keyframes cardanimation {
     0%{ width: 200px;}
     100% {
