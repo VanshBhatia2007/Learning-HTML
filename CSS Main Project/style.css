@@ -21,6 +21,7 @@ body{
     flex: 1;
     border-radius: 1rem;
     overflow: auto;
+    padding: 0rem 1.5rem 0rem 1.5rem;
 }
 .music-player{
     background-color: black;
@@ -41,6 +42,7 @@ a{
     justify-content: center;
     height: 100px;
     padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
 }
 .nav-option{
     line-height: 40px;
@@ -62,6 +64,7 @@ a{
     border-radius: 1rem;
     height: 100%;
     margin-top: 0.5rem;
+    margin-right: 0.5rem;
     padding: 0.5rem 0.75rem;
 }
 .options{
@@ -83,4 +86,86 @@ a{
 }
 .icons i:hover{
     opacity: 1;
+}
+.box{
+    height: 8rem;
+    background-color: #232323; 
+    border-radius: 0.75rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 1rem;
+}
+.box-p1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.box-p2{
+    font-size: 0.75rem;
+    opacity: 0.9;
+    /* margin-bottom: 0.5rem; */
+}
+.badge{
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 0.25rem 1rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    /* margin-bottom: 0.5rem; */
+    height: 2rem;
+    width: fit-content;
+}
+.sticky-nav{
+    position: sticky;
+    background-color: #121212;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+}
+
+.sticky-nav-icons{
+    margin-left: 0.75rem;
+}
+
+.sticky-nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item{
+    margin-right: 1rem;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+@media(max-width:1000px){
+    .hide{
+        display: none;
+    }
+}
+.card{
+    background-color: #232323;
+    width: 150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;   
+}
+.cards-cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.card-title{
+    font-weight: 600;
+}
+.card-info{
+    font-size: 0.75rem;
+    opacity: 0.8;
 }
