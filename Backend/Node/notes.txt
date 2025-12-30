@@ -31,3 +31,4 @@ Package.json - it contains descriptive and functional metadata about a project.(
  global install commands:-
     npm install -g <package name>
     npm link <package name>
+
