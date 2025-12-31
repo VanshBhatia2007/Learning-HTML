@@ -1,0 +1,13 @@
+Framework - A framework is a set of pre written code that provides a structure for developing software applications.
+Express - Node.js web application framework helps us to ame web application. used for server side programming..
+1. listen incoming request
+2. parse the data
+3. match response with routes
+4.sending response
+Port - logical endpoints of a network connection that is used to exchange information b/w client and the web server.
+
+Routing - process of selecting a path for traffic in a network or across multiple networks.
+
+
+
+Nodeman - to automatically run server with code changes.
