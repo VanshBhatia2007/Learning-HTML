@@ -11,3 +11,11 @@ Routing - process of selecting a path for traffic in a network or across multipl
 
 
 Nodeman - to automatically run server with code changes.
+
+
+app.use(express.static(path.join(__dirname,"/views")))
+
+we can also give the local host link to the form attribute action for running it at local host using get and post method
+
+app.use(express.urlencoded({extended:true})) - used to convert url data to text or json or object form.
+req.body - used to print data on terminal.

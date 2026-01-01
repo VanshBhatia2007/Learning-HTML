@@ -4,8 +4,11 @@ const path = require("path");
 
 const port=3000;
 
+app.use(express.static(path.join(__dirname,"/public/CSS")));
+app.use(express.static(path.join(__dirname,"/public/JS")));
+// app.use(express.urlencoded({extended:true}));
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"/views"));
+app.set("views",path.join(__dirname,"/views")); //path.join se jha js file h whi pr check krega ki views folder h ki nhi
 
 app.get("/",(req,res)=>{
     res.render("home.ejs");
@@ -25,6 +28,7 @@ app.get("/ig/:username",(req,res)=>{
     let instadata =require("./data.json");
     let {username} = req.params;
     const data= instadata[username];
+    // console.log(req.body);
     if(data){
         res.render("insta.ejs",{data});
     }
