@@ -1,0 +1,13 @@
+object oriented programming - To structure our code
+                                prototype
+                                new opreators
+                                constructors
+                                classes
+                                keywords(extends,super)
+
+prototype - it is like a template object that all objects inherit methods and properties.
+    arr._proto_(reference)
+    Array.prototype(actual object)
+    String.prototype
+
+factory function - that creates objects
