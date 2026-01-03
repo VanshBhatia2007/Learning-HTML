@@ -1,0 +1,9 @@
+REST - Representational State Transfer
+An architectural style that defines a set of constraints(rules) to be used for creating web services.
+
+CRUD opreations- 
+                GET - retrieves resources
+                POST - submits new data to server
+                PUT - updates existing data
+                PATCH - update existing data partially
+                DELETE - removes data
