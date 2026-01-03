@@ -1,6 +1,6 @@
 object oriented programming - To structure our code
                                 prototype
-                                new opreators
+                                new opreator
                                 constructors
                                 classes
                                 keywords(extends,super)
@@ -11,3 +11,10 @@ prototype - it is like a template object that all objects inherit methods and pr
     String.prototype
 
 factory function - that creates objects
+
+New opreator - creates an instance of a user-defined object type or of one of the built-in object
+types that has a constructor function.
+
+classes - template for creating objects.
+
+inheritance - alllows us to create new classes on the basis of already exisiting classes.
