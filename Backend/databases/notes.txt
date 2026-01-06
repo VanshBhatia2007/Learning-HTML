@@ -1,0 +1,9 @@
+MYSQL 
+
+constraints - constraint CHECK (AGE>=18);
+
+Foreign key (user_id ) refrences user(id);
+
+Limit Clause - sets an upper-limit on number of tuples to be returned
+               SELECT col1,col2 FROM table_name
+               LIMIT number; 

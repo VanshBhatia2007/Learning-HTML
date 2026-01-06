@@ -9,3 +9,11 @@ CRUD opreations-
                 DELETE - removes data
 
 res.redirect(url) - used to redirect web page
+
+CONNNECTING NODE TO SQL -
+
+connection.end() -> to close connection 
+
+usong sql from CLI -> /usr/local/mysql/bin/mysql -u root -p
+                    create schema.sql
+                    source schema.sql //in CLI
