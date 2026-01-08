@@ -7,8 +7,26 @@ const connection = mysql2.createConnection({
     database:"delta",
     password:'12345'
 });
+
+let createRandomUser = ()=> {
+  return[
+        faker.string.uuid(),
+        faker.internet.username(),
+        faker.internet.email(),
+        faker.internet.password()
+    ];
+}
+
+// console.log(createRandomUser());
+
+let q= "INSERT INTO user (userid,username,email,password) VALUES ?";
+let data=[];
+for(let i=0;i<=100;i++){
+    data.push(createRandomUser());
+}
+
 try{
-    connection.query("SHOW TABLES",(err,result)=>{
+    connection.query(q,[data],(err,result)=>{
         if(err) throw err;
         console.log(result);
 });
@@ -17,17 +35,3 @@ try{
 }
 
 connection.end();
-
-// let createRandomUser = ()=> {
-//   return {
-//     userId: faker.string.uuid(),
-//     username: faker.internet.username(),
-//     email: faker.internet.email(),
-//     avatar: faker.image.avatar(),
-//     password: faker.internet.password(),
-//     birthdate: faker.date.birthdate(),
-//     registeredAt: faker.date.past(),
-//   };
-// }
-
-// console.log(createRandomUser());
