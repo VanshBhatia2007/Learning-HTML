@@ -1,0 +1,60 @@
+const express = require("express");
+const app = express();
+const path = require("path");
+const { v4 : uuidv4 } = require('uuid');
+var methodOverride = require("method-override");
+const mysql2 =require('mysql2');
+const {faker} = require('@faker-js/faker');
+
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"views"));
+app.use(express.static(path.join(__dirname,"public")));
+
+let createRandomUser = ()=> {
+  return[
+        faker.string.uuid(),
+        faker.internet.username(),
+        faker.internet.email(),
+        faker.internet.password()
+    ];
+}
+
+
+let port =3000;
+const connection = mysql2.createConnection({
+    host:"localhost",
+    user:"root",
+    database:"delta",
+    password:'12345'
+});
+
+// try{
+//     connection.query((err,result)=>{
+//         if(err) throw err;
+//         console.log(result);
+// });
+// } catch(err){
+//     console.log(err);
+// }
+
+app.get("/",(req,res)=>{
+    let q="SELECT count(*) FROM USER";
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let count = result[0]["count(*)"];
+        console.log(result[0]["count(*)"]);
+        res.render("home.ejs",{count});
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+    // res.send("welcome to home page");
+});
+
+app.listen(port,()=>{
+    console.log(`app is listening ${port}`);
+});
