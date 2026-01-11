@@ -55,6 +55,61 @@ app.get("/",(req,res)=>{
     // res.send("welcome to home page");
 });
 
+app.get("/user",(req,res)=>{
+    let q=`SELECT * FROM USER`;
+     try{
+    connection.query(q,(err,users)=>{
+        if(err) throw err;
+        res.render("user.ejs",{users})
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+});
+
+app.get("/user/:id/edit",(req,res)=>{
+    let {id}=req.params;
+    let q= `SELECT * FROM user WHERE userid="${id}"`;
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let user = result[0];
+        res.render("edit.ejs",{user});
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+    // res.render("edit.ejs",{id});
+})
+
+//update route
+
+app.patch("/user/:id",(req,res)=>{
+    let {id}=req.params;
+    let q= `SELECT * FROM user WHERE userid="${id}"`;
+    let {password : formpass , username : newusername} = req.body;
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let user = result[0];
+        if(formpass != user.password) res.send("wrong password");
+        else{
+            let q2=`UPDATE user SET username="${newusername}" where userid='${id}'`;
+            connection.query(q2,(err,result)=>{
+                if(err) throw err;
+                res.redirect("/user");
+            });
+        } 
+        // res.render("edit.ejs",{user});
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+});
+
 app.listen(port,()=>{
     console.log(`app is listening ${port}`);
 });
