@@ -73,7 +73,6 @@ app.get("/posts/:id/edit",(req,res)=>{
     res.render("edit-post.ejs",{post});
 });
 
-
 app.listen(port,()=>{
     console.log(`app is listening ${port}`);
 });

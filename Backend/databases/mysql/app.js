@@ -110,6 +110,73 @@ app.patch("/user/:id",(req,res)=>{
     }
 });
 
+app.get("/user/new",(req,res)=>{
+    res.render("newuser.ejs");
+});
+
+app.post("/user",(req,res)=>{
+    let {username: newuser , password :newuserpass , email:newemail } = req.body;
+    let id = uuidv4();
+    let q= `INSERT INTO USER (userid,username,email,password) VALUES ("${id}","${newuser}","${newemail}","${newuserpass}")`;
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        console.log(result);
+        console.log(q);
+        res.redirect("/user");
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+});
+
+app.get("/user/:id/delete",(req,res)=>{
+    let {id}=req.params;
+    let q= `SELECT * FROM USER WHERE USERID="${id}"`;
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let user = result[0];
+        console.log(user);
+        res.render("delete.ejs", { user });
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+});
+
+app.delete("/user/:id",(req,res)=>{
+    let {id} = req.params;
+    let {email:email , password:pass} = req.body;
+    let q= `SELECT * FROM USER WHERE USERID="${id}"`;
+    try{
+    connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let user = result[0];
+        
+        if(email != user.email || pass != user.password){
+            return res.send("email or password is wrong...try again!");
+        }else{
+            let q2=`DELETE FROM USER WHERE USERID = "${id}"`;
+            connection.query(q2,(err,result)=>{
+                if(err) throw err;
+                else{
+                    console.log("delete");
+                    res.redirect("/user");
+                    // res.send("deleted");
+                }
+                
+            });
+        }
+    });
+    } catch(err){
+    console.log(err);
+    res.send("some error in database");
+    }
+});
+
 app.listen(port,()=>{
     console.log(`app is listening ${port}`);
 });
