@@ -3,3 +3,31 @@ MONGODB
 mongosh - to start mangodb
 
 use databasename - create or open the database for use
+
+insert a single document into collection => db.collection.insertone({data});
+
+show collections;
+
+db.collection.find();
+db.collection.findone();
+
+insert a multiple document into collection => db.collection.insertmany({data}.......);
+
+$in
+$gt -> greater than
+$lt -> less than
+$or -> for two conditions
+
+for updating values - 
+                     db.collection.updateone(<filter>,<update>,<options>)
+                     db.collection.updatemany(<filter>,<update>,<options>)
+                     $set - opreator used to set new values to existing fields
+                     $addfields - opreator used add new key
+                     db.collection.replaceone(<filter>,<new values>)
+
+Nesting - object ke andr object 
+
+delete -
+        db.collection.deleteMany(<filter>,<options>)
+        db.collection.deleteone(<filter>,<options>)
+        db.dropdatabase()
