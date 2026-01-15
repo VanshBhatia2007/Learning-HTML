@@ -26,9 +26,9 @@ const user1 = new User({
 });
 
 user1.save()
-            .then((res)=>{
-                console.log(res);
-            })
-            .catch((err)=>{
-                console.log(err);
-            })
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
