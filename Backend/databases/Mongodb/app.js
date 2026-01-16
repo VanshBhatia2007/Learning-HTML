@@ -37,10 +37,34 @@ app.get("/",(req,res)=>{
     res.send("root working");
 });
 
+app.get("/chats/new",(req,res)=>{
+    res.render("new.ejs");
+    
+});
+
+app.post("/chats",(req,res)=>{
+    let {from,to,msg} = req.body;
+    let newchat = new chat({
+        from: from,
+        to : to,
+        msg:msg,
+        create_at : new Date(),
+    })
+    console.log(newchat);
+    newchat.save()
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    res.redirect("/chats");
+});
+
 app.get("/chats",async (req,res)=>{
     let chats = await chat.find();
     console.log(chats);
-    res.send("working");
+    res.render("index.ejs",{chats});
 })
 
 app.listen(3000,()=>{
