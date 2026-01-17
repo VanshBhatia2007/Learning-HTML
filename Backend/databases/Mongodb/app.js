@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 // const { v4 : uuidv4 } = require('uuid');
-// var methodOverride = require("method-override");
+var methodOverride = require("method-override");
 // const mysql2 =require('mysql2');
 // const {faker} = require('@faker-js/faker');
 
 app.use(express.urlencoded({extended:true}));
-// app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public")));
@@ -61,11 +61,32 @@ app.post("/chats",(req,res)=>{
     res.redirect("/chats");
 });
 
+
+
 app.get("/chats",async (req,res)=>{
     let chats = await chat.find();
     console.log(chats);
     res.render("index.ejs",{chats});
 })
+app.get("/chats/:id/edit", async (req,res)=>{
+    let {id}=req.params;
+    let chats = await chat.findById(id);
+    res.render("edit.ejs",{chats});
+});
+
+app.put("/chats/:id",async (req,res)=>{
+    let {id}=req.params;
+    let {msg : newmsg}=req.body;
+    let updatedchat = await chat.findByIdAndUpdate(id,{msg : newmsg},{runValidators: true ,new: true});
+    console.log(updatedchat);
+    res.redirect("/chats");
+});
+
+app.delete("/chats/:id",async(req,res)=>{
+    let {id}=req.params;
+    let deletechat = await chat.findByIdAndDelete(id);
+    res.redirect("/chats");
+});
 
 app.listen(3000,()=>{
     console.log("server listening on port 3000");
