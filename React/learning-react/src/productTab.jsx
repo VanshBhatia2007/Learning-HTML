@@ -1,13 +1,20 @@
-import "./product.jsx"
+
 import Product from "./product.jsx"
 
 function ProductTab(){
-    let features =["hello" , "hi"];
+    let styles = {
+        display:"flex",
+        flexWrap: "Wrap",
+        justifyContent: "center",
+        alignItems: "center"
+    };
     return(
-        <>
-        <Product title="phone" price="100" features={features} textcolor="blue"/>
-        <Product title="laptop" price="200" features={features} />
-        </>
+        <div style={styles}>
+        <Product title="samsung tab" description="tablet for students" idx="0" />
+        <Product title="smartwatch" description="watch for tracking fitness" idx="1"  />
+        <Product title="iqoo" description="gaming phone" idx="2" />
+        <Product title="boult earbuds" description="best earbuds for music" idx="3" />
+        </div>
     )
 }
 

@@ -1,10 +1,13 @@
-function Product({title,price,features,textcolor}){
-    let list = features.map((feature)=> <li>{feature}</li>);
+import Price from "./price.jsx";
+import "./product.css"
+function Product({title,description,idx}){
+    let oldprice=["12000","10000","11000","30000"];
+    let newprice=["10000","6000","9000","26000"];
     return (
-        <div style={{color:textcolor}}>
-            <h1>{title}</h1>
-            <p>price:{price}</p>
-            <ul>{list}</ul>
+        <div className="product">
+            <h4>{title}</h4>
+            <p>{description}</p>
+            <Price oldprice={oldprice[idx]} newprice={newprice[idx]}/>
         </div>
         
     );
