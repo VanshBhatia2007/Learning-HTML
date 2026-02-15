@@ -1,7 +1,8 @@
 import "./App.css"
+import Title from "./titile";
 
 function App() {
-  return <h1>hello</h1>;
+  return <Title/>;
 }
 
-export default App
+export default App;
