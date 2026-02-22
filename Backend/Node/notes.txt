@@ -1,0 +1,33 @@
+Node.js - javascript runtime environment
+          it is used for server side programming
+          *it is not a language or a library , framework
+
+Node REPL - Read Evaluate Print Loop  
+
+to run any file - node filename.js
+
+process - object that provides information about and control over.
+process.argv - returns an array containing the command-line arguments passed when the Node.js process
+was launched.
+
+require() - a built-in function to include external modules that exist in sepreate files.
+( ek file ke code ko dusre file m use ya import krane ke liye use krte h , same we can do for folders also)
+require vs import
+for importing selective code we can use "import{sum} from "./maths.js" and "export" without using dot" which can save memory.
+AND add type:module in package.json file.... 
+
+module.export - A special object // syntax - module.exports = obj;
+                                             exports.variable_name
+
+NPM(Node Package Manager) - npm is the standard manager for Node.js.
+
+node_modules - folder contains every installed dependency for your project.
+Package-lock.json - it records exacts versions of all installed dependency and its sub-dependencies.
+Package.json - it contains descriptive and functional metadata about a project.(we can make our package.json using "npm init" and
+ after that if you download any package there information will also be saved in this )
+
+ Local vs Global
+ local - installed packages are local(they cannot be used outside there folder or in the main folder)
+ global install commands:-
+    npm install -g <package name>
+    npm link <package name>
