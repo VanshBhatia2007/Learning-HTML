@@ -7,3 +7,5 @@ CRUD opreations-
                 PUT - updates existing data
                 PATCH - update existing data partially
                 DELETE - removes data
+
+res.redirect(url) - used to redirect web page
